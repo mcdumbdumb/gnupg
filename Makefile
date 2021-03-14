@@ -1,10 +1,23 @@
-# REV01 Fri 12 Mar 13:42:23 WIB 2021
-# START Mon 15 Feb 09:41:08 WIB 2021
+# REV02 Sun 14 Mar 2021 16:34:51 WIB
+# REV01 Fri 12 Mar 2021 13:42:23 WIB
+# START Mon 15 Feb 2021 09:41:08 WIB
 
-ALL: 001.md 004.md
+ALL: 001.md 002.md 003.md 004.md 005.md 006.md
 
 001.md: 001.pmd
 	python assets/scripts/includeScript.py < 001.pmd > 001.md
+
+002.md: 002.pmd
+	python assets/scripts/includeScript.py < 002.pmd > 002.md
+
+003.md: 003.pmd
+	python assets/scripts/includeScript.py < 003.pmd > 003.md
+
+005.md: 005.pmd
+	python assets/scripts/includeScript.py < 005.pmd > 005.md
+
+006.md: 006.pmd
+	python assets/scripts/includeScript.py < 006.pmd > 006.md
 
 004.md: 004.pmd _config.yml Gemfile _layouts/layout.html Makefile \
         _includes/navbar.html \
