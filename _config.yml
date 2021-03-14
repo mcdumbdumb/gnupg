@@ -1,0 +1,21 @@
+title:       "GNUPG"
+version:     "001---14-Mar-2021"
+copyright:   "2021-2021"
+description: >- 
+  This Is How Me Do It!
+# baseurl: "" # e.g. /blog
+# url: ""     # e.g. http://example.com
+google_analytics: "UA-89852122-6"
+author:           "Dummy McDumbDumb"
+address:          "Mar-a-Lago, Fl"
+sitemap:          "true"
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+urlweb:           "https://mcdumbdumb.github.io/gnupg/"
+urlcontact:       "TBS"
+urlgithub:        "https://github.com/mcdumbdumb/gnupg/"
+urlghpage:        "https://mcdumbdumb.github.io/gnupg/"
+keywords:         "jekyll, testing"
+github:           [metadata]
+
