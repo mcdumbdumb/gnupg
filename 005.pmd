@@ -3,7 +3,94 @@ layout: "layout"
 title:  "Encryption: Symmetric"
 ---
 
-## XX
+## FILE RAHASIA.txt
+
+```
+(> RAHASIA.txt <)
+```
+
+## PASSPHRASE: DODOL
+
+## Encrypt: RAHASIA.txt
+
+### INPUT01
+
+```
+WPASSWD="DODOL"
+gpgconf --kill gpg-agent
+gpgconf --reload gpg-agent
+rm -f RAHASIA.txt.asc
+gpg --output RAHASIA.txt.asc --batch --armor --passphrase $WPASSWD --symmetric RAHASIA.txt
+ls -al RAHASIA.txt*
+
+```
+
+### OUTPUT01
+
+```
+dummy@osp:~$ WPASSWD="DODOL"
+
+dummy@osp:~$ gpgconf --kill gpg-agent
+
+dummy@osp:~$ gpgconf --reload gpg-agent
+
+dummy@osp:~$ rm -f RAHASIA.txt.asc
+
+dummy@osp:~$ gpg --output RAHASIA.txt.asc --batch --armor --passphrase $WPASSWD --symmetric RAHASIA.txt
+
+dummy@osp:~$ ls -al RAHASIA.txt*
+-rw-r--r-- 1 dummy dummy  55 Mar 14 19:05 RAHASIA.txt
+-rw-r--r-- 1 dummy dummy 228 Mar 14 19:07 RAHASIA.txt.asc
+
+dummy@osp:~$ 
+
+```
+
+<br>
+## FILE RAHASIA.txt.asc
+
+```
+(> RAHASIA.txt.asc <)
+```
+
+<br>
+## DECRYPT RAHASIA.txt.asc
+
+### INPUT02
+
+```
+rm -f DECRYPTED-RAHASIA.txt.asc
+gpg --output DECRYPTED-RAHASIA.txt --decrypt RAHASIA.txt.asc
+cat DECRYPTED-RAHASIA.txt
+
+```
+
+### OUTPUT02
+
+```
+dummy@osp:~$ rm -f DECRYPTED-RAHASIA.txt.asc
+
+dummy@osp:~$ gpg --output DECRYPTED-RAHASIA.txt --decrypt RAHASIA.txt.asc 
+gpg: AES256 encrypted data
+gpg: encrypted with 1 passphrase
+
+```
+
+<img src="{{ site.baseurl }}/assets/images/dummy-002.jpg"  width="960">
+
+* PASSPHRASE: **DODOL**
+
+
+```
+dummy@osp:~$ cat DECRYPTED-RAHASIA.txt 
+
+ZCZC F31 RAHASIA
+JANGAN KASIH TAHU SIAPA SIAPA!
+NNNN
+
+dummy@osp:~$ 
+
+```
 
 <br>
 ### NEXT: [Encryption: Asymmetric](006.md)
