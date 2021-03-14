@@ -3,6 +3,76 @@ layout: "layout"
 title:  "GPG Key: Import"
 ---
 
-## TBA
+## Importing a Public Key (eg. for OS211)
+
+* Source: <https://osp4diss.vlsm.org/ETC/ospubkey.txt>
+
+### INPUT01
+
+```
+wget -c https://osp4diss.vlsm.org/ETC/ospubkey.txt
+
+```
+
+### OUTPUT01
+
+```
+dummy@osp:~$ wget -c https://osp4diss.vlsm.org/ETC/ospubkey.txt
+--2021-03-15 05:58:17--  https://osp4diss.vlsm.org/ETC/ospubkey.txt
+Resolving osp4diss.vlsm.org (osp4diss.vlsm.org)... 185.199.109.153, 185.199.108.153, 185.199.111.153, ...
+Connecting to osp4diss.vlsm.org (osp4diss.vlsm.org)|185.199.109.153|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 3171 (3.1K) [text/plain]
+Saving to: ‘ospubkey.txt’
+
+ospubkey.txt   100%[============================================>]   3.10K  --.-KB/s    in 0s      
+
+2021-03-15 05:58:18 (13.1 MB/s) - ‘ospubkey.txt’ saved [3171/3171]
+
+dummy@osp:~$
+
+```
+
+## File ospubkey.txt
+
+```
+(> ospubkey.txt <)
+
+```
+
+## INPUT02
+
+```
+gpg --import ospubkey.txt
+gpg --list-keys
+
+```
+
+## OUTPUT02
+
+```
+dummy@osp:~$ gpg --import ospubkey.txt
+gpg: key D0F5DBDD67DF6DDE: public key "Operating Systems (OS) <operatingsystems@vlsm.org>" imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+
+dummy@osp:~$ gpg --list-keys
+/home/dummy/.gnupg/pubring.kbx
+------------------------------
+pub   rsa4096 2021-03-14 [SC] [expires: 2022-03-14]
+      883F5A0CC8EF72D9CF87ADE2EAC3041E9175151A
+uid           [ultimate] Dummy McDumbDumb (DUMMY) <dummy@fakeSpammBait.com>
+sub   rsa4096 2021-03-14 [E] [expires: 2022-03-14]
+
+pub   rsa4096 2020-02-13 [SC] [expires: 2021-08-17]
+      B4507B533F7F22840BD8E93ED0F5DBDD67DF6DDE
+uid           [ unknown] Operating Systems (OS) <operatingsystems@vlsm.org>
+sub   rsa4096 2020-02-13 [E] [expires: 2021-08-17]
+
+dummy@osp:~$
+
+```
+
 
 ### NEXT: [Encryption: Asymmetric](006.md)
+
