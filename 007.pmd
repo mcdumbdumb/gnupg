@@ -73,6 +73,77 @@ dummy@osp:~$
 
 ```
 
+## Edit Key
+
+### INPUT03
+
+```
+gpg --edit-key operatingsystems@vlsm.org
+gpg --list-key operatingsystems@vlsm.org
+
+```
+
+### OUTPUT03
+
+```
+dummy@osp:~$ gpg --edit-key operatingsystems@vlsm.org
+gpg (GnuPG) 2.2.12; Copyright (C) 2018 Free Software Foundation, Inc.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+
+pub  rsa4096/D0F5DBDD67DF6DDE
+     created: 2020-02-13  expires: 2021-08-17  usage: SC  
+     trust: unknown       validity: unknown
+sub  rsa4096/4B5BBD0444170902
+     created: 2020-02-13  expires: 2021-08-17  usage: E   
+[ unknown] (1). Operating Systems (OS) <operatingsystems@vlsm.org>
+
+gpg> trust
+pub  rsa4096/D0F5DBDD67DF6DDE
+     created: 2020-02-13  expires: 2021-08-17  usage: SC  
+     trust: unknown       validity: unknown
+sub  rsa4096/4B5BBD0444170902
+     created: 2020-02-13  expires: 2021-08-17  usage: E   
+[ unknown] (1). Operating Systems (OS) <operatingsystems@vlsm.org>
+
+Please decide how far you trust this user to correctly verify other users' keys
+(by looking at passports, checking fingerprints from different sources, etc.)
+
+  1 = I don't know or won't say
+  2 = I do NOT trust
+  3 = I trust marginally
+  4 = I trust fully
+  5 = I trust ultimately
+  m = back to the main menu
+
+Your decision? 5
+Do you really want to set this key to ultimate trust? (y/N) y
+
+pub  rsa4096/D0F5DBDD67DF6DDE
+     created: 2020-02-13  expires: 2021-08-17  usage: SC  
+     trust: ultimate      validity: unknown
+sub  rsa4096/4B5BBD0444170902
+     created: 2020-02-13  expires: 2021-08-17  usage: E   
+[ unknown] (1). Operating Systems (OS) <operatingsystems@vlsm.org>
+Please note that the shown key validity is not necessarily correct
+unless you restart the program.
+
+gpg> quit
+
+dummy@osp:~$ gpg --list-key operatingsystems@vlsm.org
+gpg: checking the trustdb
+gpg: marginals needed: 3  completes needed: 1  trust model: pgp
+gpg: depth: 0  valid:   2  signed:   0  trust: 0-, 0q, 0n, 0m, 0f, 2u
+gpg: next trustdb check due at 2021-08-17
+pub   rsa4096 2020-02-13 [SC] [expires: 2021-08-17]
+      B4507B533F7F22840BD8E93ED0F5DBDD67DF6DDE
+uid           [ultimate] Operating Systems (OS) <operatingsystems@vlsm.org>
+sub   rsa4096 2020-02-13 [E] [expires: 2021-08-17]
+
+dummy@osp:~$
+
+```
 
 ### NEXT: [Encryption: Asymmetric](006.md)
 
