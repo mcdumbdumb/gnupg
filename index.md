@@ -4,7 +4,8 @@ layout: "layout"
 
 Covfefe-19!
 
-This is {{ site.title }} and I am {{ site.author }}, {{ site.address }}.
+I am {{ site.author }} from {{ site.address }}.
 
-Qapla, Jolan Tru!
+
+May the fork() be with you!
 
