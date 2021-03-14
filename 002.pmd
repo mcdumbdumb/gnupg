@@ -187,3 +187,6 @@ dummy@osp:~$
 
 * **NOTE**: sha1sum mypubkey5.txt = sha1sum mypubkey1.txt
 
+<br>
+### NEXT: [SHA256SUM: Checksum and GPG Signature](003.md)
+
