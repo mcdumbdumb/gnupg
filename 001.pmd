@@ -5,7 +5,7 @@ title:  "Generating a GPG key-pair"
 
 ## Options:
 
-| Real Name:     | Dummy McDumbDumb (This is **NOT YOUR** name?) |
+| Real Name:     | Dummy McDumbDumb (This is **NOT YOUR** name, is it?) |
 | Email:         | dummy@fakeSpammBait.com (Neither your email) |
 | Comment:       | DUMMY (A uniq name) |
 | Kind of key:   | RSA and RSA (default) |
