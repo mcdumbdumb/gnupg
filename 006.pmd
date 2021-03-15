@@ -1,7 +1,93 @@
 ---
 layout: "layout"
-title:  "Encryption: Asymmetric"
+title:  "Encryption: Symmetric"
 ---
 
-## TBA
+## FILE RAHASIA.txt (again!)
+
+```
+(> RAHASIA.txt <)
+```
+
+## Encrypt: RAHASIA.txt
+
+* gnupg asymetric encryption
+* Recipient I: operatingsystems@vlsm.org
+* Recipient II:  dummy@fakeSpammBait.com
+* Output file: RAHASIA-again.txt.asc
+
+### INPUT01
+
+```
+gpgconf --kill gpg-agent
+gpgconf --reload gpg-agent
+rm -f RAHASIA-again.txt.asc
+gpg --armor --output RAHASIA-again.txt.asc --encrypt --recipient operatingsystems@vlsm.org --recipient dummy@fakeSpammBait.com RAHASIA.txt
+ls -al RAHASIA.txt RAHASIA-again.txt.asc
+
+```
+
+### OUTPUT01
+
+```
+dummy@osp:~$ gpgconf --kill gpg-agent
+
+dummy@osp:~$ gpgconf --reload gpg-agent
+
+dummy@osp:~$ rm -f RAHASIA-again.txt.asc
+
+dummy@osp:~$ gpg --armor --output RAHASIA-again.txt.asc --encrypt --recipient operatingsystems@vlsm.org --recipient dummy@fakeSpammBait.com RAHASIA.txt
+
+dummy@osp:~$ ls -al RAHASIA.txt RAHASIA-again.txt.asc
+-rw-r--r-- 1 dummy dummy 1646 Mar 15 09:09 RAHASIA-again.txt.asc
+-rw-r--r-- 1 dummy dummy   55 Mar 14 19:05 RAHASIA.txt
+
+dummy@osp:~$
+
+```
+
+<br>
+## FILE RAHASIA-again.txt.asc
+
+```
+(> RAHASIA-again.txt.asc <)
+```
+
+<br>
+## DECRYPT RAHASIA-again.txt.asc
+
+### INPUT02
+
+```
+rm -f DECRYPTED-RAHASIA-again.txt.asc
+gpg --output DECRYPTED-RAHASIA-again.txt --decrypt RAHASIA-again.txt.asc
+cat DECRYPTED-RAHASIA-again.txt
+
+```
+
+### OUTPUT02
+
+```
+dummy@osp:~$ cp RAHASIA-again.txt.asc /tmp
+
+dummy@osp:~$ rm -f DECRYPTED-RAHASIA-again.txt.asc
+
+dummy@osp:~$ gpg --output DECRYPTED-RAHASIA-again.txt --decrypt RAHASIA-again.txt.asc
+gpg: encrypted with 4096-bit RSA key, ID 4B5BBD0444170902, created 2020-02-13
+      "Operating Systems (OS) <operatingsystems@vlsm.org>"
+gpg: encrypted with 4096-bit RSA key, ID 9A9320401585BFE1, created 2021-03-14
+      "Dummy McDumbDumb (DUMMY) <dummy@fakeSpammBait.com>"
+
+dummy@osp:~$ cat DECRYPTED-RAHASIA.txt 
+
+ZCZC F31 RAHASIA
+JANGAN KASIH TAHU SIAPA SIAPA!
+NNNN
+
+dummy@osp:~$ 
+
+```
+
+<br>
+### NEXT: [GPG Key: Import](007.md)
 
